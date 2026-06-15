@@ -1,0 +1,183 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "products": "Productos",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "ctaDemo": "Solicitar Demo"
+  },
+  "hero": {
+    "badge": "🛰️ Tecnología validada en 3 continentes",
+    "headline": "Tecnología de vanguardia para una ganadería más rentable y sostenible",
+    "subheadline": "Medimos la biomasa de tus pastizales con Machine Learning para que cada hectárea rinda al máximo sin degradar tu tierra",
+    "cta1": "Solicita tu análisis gratuito",
+    "cta2": "Ver cómo funciona ↓",
+    "stat1": "10,000+ ha analizadas",
+    "stat2": "94% precisión",
+    "stat3": "3 continentes"
+  },
+  "problem": {
+    "title": "El sobrepastoreo está destruyendo las tierras ganaderas de Bolivia",
+    "statNumber": "70%",
+    "statLabel": "de las tierras ganaderas sufren degradación",
+    "painPoints": [
+      "Pérdida de $120 USD/ha/año por sobrepastoreo",
+      "Reducción de capacidad de carga año tras año",
+      "Decisiones de rotación basadas solo en intuición"
+    ],
+    "bridge": "¿Y si pudieras ver exactamente cuánto pasto tiene cada potrero antes de decidir?"
+  },
+  "products": {
+    "title": "Dos soluciones. Un objetivo: ganadería inteligente.",
+    "grassGauge": {
+      "name": "Grass Gauge",
+      "subtitle": "Planificación de pastoreo con visión satelital",
+      "description": "Medimos biomasa, determinamos nutrientes y generamos tu plan de rotación optimizado",
+      "features": [
+        { "icon": "🛰️", "text": "Imágenes satelitales cada 5-10 días" },
+        { "icon": "🧠", "text": "ML para estimación de biomasa y nutrientes" },
+        { "icon": "📋", "text": "Plan de pastoreo listo para ejecutar" }
+      ],
+      "badge": "DISPONIBLE AHORA",
+      "cta": "Conocer Grass Gauge →"
+    },
+    "cattleVision": {
+      "name": "CattleVision",
+      "subtitle": "Pesaje de ganado con drones y visión artificial",
+      "description": "Estimamos el peso de tu ganado con drones y LiDAR, sin estrés animal ni manejo físico",
+      "features": [
+        { "icon": "🚁", "text": "Drones + LiDAR" },
+        { "icon": "👁️", "text": "Visión artificial 3D" },
+        { "icon": "⚖️", "text": "Estimación de peso precisa" }
+      ],
+      "badge": "PRÓXIMAMENTE",
+      "cta": "Más información →"
+    }
+  },
+  "howItWorks": {
+    "title": "De la imagen satelital a tu plan de pastoreo en 3 pasos",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Capturamos",
+        "description": "Obtenemos imágenes multiespectrales de tus potreros cada 5-10 días vía satélite"
+      },
+      {
+        "number": "02",
+        "title": "Analizamos",
+        "description": "Nuestro modelo de ML procesa las imágenes para estimar biomasa disponible y contenido nutricional"
+      },
+      {
+        "number": "03",
+        "title": "Planificamos",
+        "description": "Recibes un plan de rotación optimizado: qué potrero usar, cuántas cabezas, por cuántos días"
+      }
+    ]
+  },
+  "mapDemo": {
+    "title": "Visualiza tu campo como nunca antes",
+    "buttons": {
+      "satellite": "Vista Satelital",
+      "biomass": "Biomasa",
+      "plan": "Plan Pastoreo"
+    },
+    "placeholder": {
+      "pasture": "Potrero Norte - 45 ha",
+      "biomass": "2,450 kg MS/ha",
+      "nutrition": "Alto ●",
+      "recommendation": "Listo para pastoreo — 120 cabezas x 8 días"
+    },
+    "disclaimer": "Demo ilustrativa con datos de ejemplo"
+  },
+  "benefits": {
+    "title": "Resultados que impactan tu operación",
+    "metrics": [
+      { "number": "+40%", "label": "aumento en capacidad de carga" },
+      { "number": "$45 USD", "label": "ahorro por hectárea al año" },
+      { "number": "5 años", "label": "más de vida útil del pastizal" },
+      { "number": "15 días", "label": "frecuencia de actualización" }
+    ],
+    "calculator": {
+      "label": "Ingresa tus hectáreas:",
+      "result": "Ahorro anual estimado:"
+    }
+  },
+  "technology": {
+    "title": "Tecnología de precisión para el campo",
+    "items": [
+      { "icon": "🛰️", "title": "Imágenes Multiespectrales", "description": "Capturamos datos de satélites de alta resolución cada 5-10 días" },
+      { "icon": "🧠", "title": "Machine Learning", "description": "Modelos entrenados con datos reales de Australia y validados en Bolivia" },
+      { "icon": "📊", "title": "Analítica Predictiva", "description": "Proyecciones de crecimiento y recomendaciones basadas en datos" }
+    ],
+    "pipeline": "Satélite → Procesamiento → Modelo ML → Dashboard → Plan",
+    "badge": "Desarrollado con datos reales de Australia. Validado en Bolivia."
+  },
+  "backing": {
+    "title": "Respaldados por",
+    "text": "Más de 10,000 hectáreas analizadas en pilotos"
+  },
+  "ctaFinal": {
+    "title": "Solicita tu análisis gratuito de 100 hectáreas",
+    "subtitle": "Sin compromiso. Recibe un reporte de biomasa de tu campo en 72 horas.",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Email",
+      "phone": "Teléfono / WhatsApp",
+      "property": "Nombre de la propiedad",
+      "hectares": "Hectáreas aproximadas",
+      "region": "Departamento/Región",
+      "regions": ["Santa Cruz", "Beni", "Pando", "Otro"],
+      "message": "Mensaje (opcional)",
+      "consent": "Acepto ser contactado por Aristeus",
+      "submit": "Solicitar Análisis Gratuito"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Aristeus. Tecnología para una ganadería sostenible.",
+    "location": "Santa Cruz de la Sierra, Bolivia",
+    "links": {
+      "products": "Productos",
+      "grassGauge": "Grass Gauge",
+      "cattleVision": "CattleVision",
+      "company": "Empresa",
+      "about": "Nosotros",
+      "contact": "Contacto",
+      "legal": "Legal",
+      "terms": "Términos",
+      "privacy": "Privacidad"
+    }
+  },
+  "productPage": {
+    "grassGauge": {
+      "hero": "Grass Gauge — Sabe exactamente cuánto pasto tienes",
+      "cta": "Prueba Grass Gauge en tu campo"
+    },
+    "cattleVision": {
+      "hero": "CattleVision — El peso de tu ganado, sin tocarlo",
+      "badge": "En desarrollo — Registro para acceso temprano",
+      "cta": "Registrarse para acceso temprano"
+    }
+  },
+  "aboutPage": {
+    "hero": "Tecnología boliviana para el campo latinoamericano",
+    "mission": {
+      "title": "Misión",
+      "text": "Democratizar el acceso a tecnología de precisión para ganaderos de Latinoamérica, aumentando la rentabilidad y sostenibilidad de sus operaciones."
+    },
+    "vision": {
+      "title": "Visión",
+      "text": "Ser la plataforma de referencia en agtech para ganadería tropical, presente en los principales países productores de la región."
+    },
+    "cta": "Trabaja con nosotros"
+  },
+  "contactPage": {
+    "title": "Contacto",
+    "email": "contacto@aristeus.com",
+    "phone": "+591 XXX XXXX",
+    "location": "Santa Cruz de la Sierra, Bolivia"
+  },
+  "language": {
+    "es": "ES",
+    "en": "EN"
+  }
+}

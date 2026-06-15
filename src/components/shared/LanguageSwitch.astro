@@ -1,0 +1,61 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`flex items-center gap-2 ${className}`} id="language-switch">
+  <button 
+    data-lang="es" 
+    class="lang-btn px-3 py-1 text-sm font-medium rounded transition-smooth text-aristeus-green bg-aristeus-green/20"
+    aria-label="Cambiar a español"
+  >
+    ES
+  </button>
+  <button 
+    data-lang="en" 
+    class="lang-btn px-3 py-1 text-sm font-medium rounded transition-smooth text-text-secondary hover:text-text-primary"
+    aria-label="Switch to English"
+  >
+    EN
+  </button>
+</div>
+
+<script>
+  import { getStoredLanguage, setStoredLanguage, toggleLanguage, updatePageContent, type Language } from '../../utils/i18n';
+  
+  function updateButtons(lang: Language) {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const btnLang = btn.getAttribute('data-lang') as Language;
+      if (btnLang === lang) {
+        btn.classList.add('text-aristeus-green', 'bg-aristeus-green/20');
+        btn.classList.remove('text-text-secondary', 'hover:text-text-primary');
+      } else {
+        btn.classList.remove('text-aristeus-green', 'bg-aristeus-green/20');
+        btn.classList.add('text-text-secondary', 'hover:text-text-primary');
+      }
+    });
+  }
+  
+  function init() {
+    const currentLang = getStoredLanguage();
+    document.documentElement.lang = currentLang;
+    updateButtons(currentLang);
+    
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const newLang = toggleLanguage();
+        updateButtons(newLang);
+        updatePageContent(newLang);
+      });
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+</script>

@@ -1,0 +1,120 @@
+---
+import Button from '../shared/Button.astro';
+import LanguageSwitch from '../shared/LanguageSwitch.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Inicio', labelEn: 'Home' },
+  { href: '/productos', label: 'Productos', labelEn: 'Products' },
+  { href: '/nosotros', label: 'Nosotros', labelEn: 'About' },
+  { href: '/contacto', label: 'Contacto', labelEn: 'Contact' },
+];
+---
+
+<nav class={`fixed top-0 left-0 right-0 z-50 glass border-b border-border-subtle ${className}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-aristeus-navy flex items-center justify-center group-hover:brightness-110 transition-smooth">
+          <span class="font-heading font-bold text-aristeus-green text-xl">A</span>
+        </div>
+        <span class="font-heading font-semibold text-xl text-text-primary hidden sm:block">
+          Aristeus
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        {navLinks.map(link => (
+          <a 
+            href={link.href} 
+            class="text-text-secondary hover:text-text-primary font-medium transition-smooth text-sm"
+            data-i18n={`nav.${link.label.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')}`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Right side: Language + CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <LanguageSwitch />
+        <Button 
+          text="Solicitar Demo" 
+          href="/contacto" 
+          variant="primary" 
+          color="green" 
+          size="sm"
+        />
+      </div>
+
+      <!-- Mobile menu button -->
+      <button 
+        id="mobile-menu-btn" 
+        class="md:hidden p-2 text-text-primary hover:text-aristeus-green transition-smooth"
+        aria-label="Toggle menu"
+      >
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border-subtle bg-bg-card">
+    <div class="px-4 py-4 space-y-3">
+      {navLinks.map(link => (
+        <a 
+          href={link.href} 
+          class="block text-text-secondary hover:text-text-primary font-medium py-2 transition-smooth"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="pt-3 border-t border-border-subtle flex items-center justify-between">
+        <LanguageSwitch />
+        <Button 
+          text="Solicitar Demo" 
+          href="/contacto" 
+          variant="primary" 
+          color="green" 
+          size="sm"
+        />
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon?.classList.toggle('hidden');
+      closeIcon?.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      });
+    });
+  }
+</script>

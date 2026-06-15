@@ -1,0 +1,77 @@
+---
+import Button from '../shared/Button.astro';
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background image with overlay -->
+  <div class="absolute inset-0">
+    <img 
+      src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80" 
+      alt="Pasture satellite view"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-primary/80 via-bg-primary/60 to-bg-primary/40"></div>
+  </div>
+  
+  <!-- Content -->
+  <div class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-20">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-aristeus-green/30 mb-6 animate-fade-in">
+      <span class="text-aristeus-green">🛰️</span>
+      <span class="text-sm text-text-secondary" data-i18n="hero.badge">
+        Tecnología validada en 3 continentes
+      </span>
+    </div>
+    
+    <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-text-primary mb-6 leading-tight animate-fade-up" style="animation-delay: 0.1s;">
+      <span data-i18n="hero.headline">Tecnología de vanguardia para una ganadería más rentable y sostenible</span>
+    </h1>
+    
+    <p class="text-text-secondary text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 animate-fade-up" style="animation-delay: 0.2s;" data-i18n="hero.subheadline">
+      Medimos la biomasa de tus pastizales con Machine Learning para que cada hectárea rinda al máximo sin degradar tu tierra
+    </p>
+    
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style="animation-delay: 0.3s;">
+      <Button 
+        text="Solicita tu análisis gratuito" 
+        href="#contacto" 
+        variant="primary" 
+        color="green" 
+        size="lg"
+        class="w-full sm:w-auto"
+      />
+      <Button 
+        text="Ver cómo funciona ↓" 
+        href="#como-funciona" 
+        variant="outline" 
+        color="white" 
+        size="lg"
+        class="w-full sm:w-auto"
+      />
+    </div>
+    
+    <!-- Stats bar -->
+    <div class="mt-16 md:mt-24 glass rounded-xl p-6 inline-flex flex-wrap items-center justify-center gap-6 md:gap-12 animate-fade-up" style="animation-delay: 0.4s;">
+      <div class="text-center">
+        <div class="font-data text-2xl md:text-3xl text-aristeus-green font-semibold">10,000+</div>
+        <div class="text-text-secondary text-sm" data-i18n="hero.stat1">ha analizadas</div>
+      </div>
+      <div class="w-px h-10 bg-border-subtle hidden sm:block"></div>
+      <div class="text-center">
+        <div class="font-data text-2xl md:text-3xl text-aristeus-green font-semibold">94%</div>
+        <div class="text-text-secondary text-sm" data-i18n="hero.stat2">precisión</div>
+      </div>
+      <div class="w-px h-10 bg-border-subtle hidden sm:block"></div>
+      <div class="text-center">
+        <div class="font-data text-2xl md:text-3xl text-aristeus-green font-semibold">3</div>
+        <div class="text-text-secondary text-sm" data-i18n="hero.stat3">continentes</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+</section>

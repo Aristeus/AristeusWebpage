@@ -1,0 +1,99 @@
+---
+import SectionTitle from '../shared/SectionTitle.astro';
+import ScrollReveal from '../animations/ScrollReveal.astro';
+---
+
+<section class="py-20 md:py-32 bg-bg-primary" id="tecnologia">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <ScrollReveal>
+      <SectionTitle 
+        title="Tecnología de precisión para el campo"
+        align="center"
+        class="mb-16"
+      />
+    </ScrollReveal>
+    
+    <!-- Three columns -->
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <ScrollReveal animation="fade-up" delay={0}>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-aristeus-navy/50 flex items-center justify-center text-3xl">
+            🛰️
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-text-primary mb-2">
+            Imágenes Multiespectrales
+          </h3>
+          <p class="text-text-secondary text-sm">
+            Capturamos datos de satélites de alta resolución cada 5-10 días
+          </p>
+        </div>
+      </ScrollReveal>
+      
+      <ScrollReveal animation="fade-up" delay={150}>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-aristeus-navy/50 flex items-center justify-center text-3xl">
+            🧠
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-text-primary mb-2">
+            Machine Learning
+          </h3>
+          <p class="text-text-secondary text-sm">
+            Modelos entrenados con datos reales de Australia y validados en Bolivia
+          </p>
+        </div>
+      </ScrollReveal>
+      
+      <ScrollReveal animation="fade-up" delay={300}>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-aristeus-navy/50 flex items-center justify-center text-3xl">
+            📊
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-text-primary mb-2">
+            Analítica Predictiva
+          </h3>
+          <p class="text-text-secondary text-sm">
+            Proyecciones de crecimiento y recomendaciones basadas en datos
+          </p>
+        </div>
+      </ScrollReveal>
+    </div>
+    
+    <!-- Pipeline visualization -->
+    <ScrollReveal animation="fade-in">
+      <div class="glass rounded-xl p-8">
+        <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-full bg-aristeus-navy flex items-center justify-center text-aristeus-green">🛰️</span>
+            <span class="text-text-secondary">Satélite</span>
+          </div>
+          <span class="text-border-subtle text-xl">→</span>
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-full bg-aristeus-navy flex items-center justify-center text-aristeus-green">⚙️</span>
+            <span class="text-text-secondary">Procesamiento</span>
+          </div>
+          <span class="text-border-subtle text-xl">→</span>
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-full bg-aristeus-navy flex items-center justify-center text-aristeus-green">🧠</span>
+            <span class="text-text-secondary">Modelo ML</span>
+          </div>
+          <span class="text-border-subtle text-xl">→</span>
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-full bg-aristeus-navy flex items-center justify-center text-aristeus-green">📈</span>
+            <span class="text-text-secondary">Dashboard</span>
+          </div>
+          <span class="text-border-subtle text-xl">→</span>
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-full bg-aristeus-navy flex items-center justify-center text-aristeus-green">📋</span>
+            <span class="text-text-secondary">Plan</span>
+          </div>
+        </div>
+        
+        <div class="mt-6 text-center">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-aristeus-green/10 text-aristeus-green text-sm">
+            ✅ Desarrollado con datos reales de Australia. Validado en Bolivia.
+          </span>
+        </div>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>

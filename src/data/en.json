@@ -1,0 +1,184 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "ctaDemo": "Request Demo"
+  },
+  "hero": {
+    "badge": "🛰️ Technology validated in 3 continents",
+    "headline": "Satellite intelligence for more profitable and sustainable livestock",
+    "subheadline": "We measure your pasture biomass with Machine Learning so every hectare yields maximum without degrading your land",
+    "cta1": "Request your free analysis",
+    "cta2": "See how it works ↓",
+    "stat1": "10,000+ ha analyzed",
+    "stat2": "94% accuracy",
+    "stat3": "3 continents"
+  },
+  "problem": {
+    "title": "Overgrazing is destroying Bolivia's cattle lands",
+    "statNumber": "70%",
+    "statLabel": "of cattle lands suffer degradation",
+    "painPoints": [
+      "$120 USD/ha/year loss due to overgrazing",
+      "Reduced carrying capacity year after year",
+      "Rotation decisions based solely on intuition"
+    ],
+    "bridge": "What if you could see exactly how much grass each paddock has before deciding?"
+  },
+  "products": {
+    "title": "Two solutions. One goal: intelligent livestock.",
+    "grassGauge": {
+      "name": "Grass Gauge",
+      "subtitle": "Satellite-powered grazing planning",
+      "description": "We measure biomass, determine nutrients and generate your optimized rotation plan",
+      "features": [
+        { "icon": "🛰️", "text": "Satellite images every 5-10 days" },
+        { "icon": "🧠", "text": "ML for biomass and nutrient estimation" },
+        { "icon": "📋", "text": "Ready-to-execute grazing plan" }
+      ],
+      "badge": "AVAILABLE NOW",
+      "cta": "Discover Grass Gauge →"
+    },
+    "cattleVision": {
+      "name": "CattleVision",
+      "subtitle": "Livestock weighing with drones and AI vision",
+      "description": "We estimate your cattle weight with drones and LiDAR, without animal stress or physical handling",
+      "features": [
+        { "icon": "🚁", "text": "Drones + LiDAR" },
+        { "icon": "👁️", "text": "3D AI vision" },
+        { "icon": "⚖️", "text": "Accurate weight estimation" }
+      ],
+      "badge": "COMING SOON",
+      "cta": "Learn more →"
+    }
+  },
+  "howItWorks": {
+    "title": "From satellite image to your grazing plan in 3 steps",
+    "steps": [
+      {
+        "number": "01",
+        "title": "We Capture",
+        "description": "We obtain multispectral images of your paddocks every 5-10 days via satellite"
+      },
+      {
+        "number": "02",
+        "title": "We Analyze",
+        "description": "Our ML model processes images to estimate available biomass and nutritional content"
+      },
+      {
+        "number": "03",
+        "title": "We Plan",
+        "description": "You receive an optimized rotation plan: which paddock, how many head, for how many days"
+      }
+    ]
+  },
+  "mapDemo": {
+    "title": "Visualize your field like never before",
+    "buttons": {
+      "satellite": "Satellite View",
+      "biomass": "Biomass",
+      "plan": "Grazing Plan"
+    },
+    "placeholder": {
+      "pasture": "North Paddock - 45 ha",
+      "biomass": "2,450 kg DM/ha",
+      "nutrition": "High ●",
+      "recommendation": "Ready for grazing — 120 head x 8 days"
+    },
+    "disclaimer": "Illustrative demo with sample data"
+  },
+  "benefits": {
+    "title": "Results that impact your operation",
+    "metrics": [
+      { "number": "+40%", "label": "increase in carrying capacity" },
+      { "number": "$45 USD", "label": "savings per hectare per year" },
+      { "number": "5 years", "label": "more pasture lifespan" },
+      { "number": "15 days", "label": "update frequency" }
+    ],
+    "calculator": {
+      "label": "Enter your hectares:",
+      "result": "Estimated annual savings:"
+    }
+  },
+  "technology": {
+    "title": "Precision technology for the field",
+    "items": [
+      { "icon": "🛰️", "title": "Multispectral Imagery", "description": "We capture high-resolution satellite data every 5-10 days" },
+      { "icon": "🧠", "title": "Machine Learning", "description": "Models trained with real Australian data and validated in Bolivia" },
+      { "icon": "📊", "title": "Predictive Analytics", "description": "Growth projections and data-driven recommendations" }
+    ],
+    "pipeline": "Satellite → Processing → ML Model → Dashboard → Plan",
+    "badge": "Developed with real data from Australia. Validated in Bolivia."
+  },
+  "backing": {
+    "title": "Backed by",
+    "text": "Over 10,000 hectares analyzed in pilots"
+  },
+  "ctaFinal": {
+    "title": "Request your free analysis of 100 hectares",
+    "subtitle": "No commitment. Receive a biomass report of your field in 72 hours.",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone / WhatsApp",
+      "property": "Property name",
+      "hectares": "Approximate hectares",
+      "region": "Department/Region",
+      "regions": ["Santa Cruz", "Beni", "Pando", "Other"],
+      "message": "Message (optional)",
+      "consent": "I agree to be contacted by Aristeus",
+      "submit": "Request Free Analysis"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Aristeus. Technology for sustainable livestock.",
+    "location": "Santa Cruz de la Sierra, Bolivia",
+    "links": {
+      "products": "Products",
+      "grassGauge": "Grass Gauge",
+      "cattleVision": "CattleVision",
+      "company": "Company",
+      "about": "About",
+      "contact": "Contact",
+      "legal": "Legal",
+      "terms": "Terms",
+      "privacy": "Privacy"
+    }
+  },
+  "productPage": {
+    "grassGauge": {
+      "hero": "Grass Gauge — Know exactly how much grass you have",
+      "cta": "Try Grass Gauge on your field"
+    },
+    "cattleVision": {
+      "hero": "CattleVision — Your cattle weight, without touching it",
+      "badge": "In development — Register for early access",
+      "cta": "Register for early access"
+    }
+  },
+  "aboutPage": {
+    "hero": "Bolivian technology for Latin American agriculture",
+    "mission": {
+      "title": "Mission",
+      "text": "Democratize access to precision technology for Latin American ranchers, increasing the profitability and sustainability of their operations."
+    },
+    "vision": {
+      "title": "Vision",
+      "title2": "Vision",
+      "text": "To be the reference agtech platform for tropical livestock, present in the region's major producing countries."
+    },
+    "cta": "Work with us"
+  },
+  "contactPage": {
+    "title": "Contact",
+    "email": "contact@aristeus.com",
+    "phone": "+591 XXX XXXX",
+    "location": "Santa Cruz de la Sierra, Bolivia"
+  },
+  "language": {
+    "es": "ES",
+    "en": "EN"
+  }
+}
