@@ -1,9 +1,13 @@
 # Build output
 dist/
+build/
 .output/
 
 # Dependencies
 node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # Logs
 npm-debug.log*
@@ -15,6 +19,7 @@ pnpm-debug.log*
 .env
 .env.local
 .env.production
+.env.*.local
 
 # IDE
 .vscode/
@@ -22,10 +27,16 @@ pnpm-debug.log*
 *.swp
 *.swo
 *~
+*.sublime-project
+*.sublime-workspace
 
 # OS
 .DS_Store
 Thumbs.db
+.directory
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 
 # Astro
 .astro/
@@ -33,6 +44,16 @@ Thumbs.db
 # Cache
 .cache/
 .parcel-cache/
+.eslintcache
+
+# Temporary files
+.tmp/
+temp/
+*.bak
 
 # Optional: local Netlify folder
 .netlify/
+
+# IDE generated
+*.iml
+out/
