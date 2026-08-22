@@ -15,12 +15,12 @@ import ScrollReveal from '../animations/ScrollReveal.astro';
     
     <div class="grid md:grid-cols-3 gap-8 relative">
       <!-- Connecting line (hidden on mobile) -->
-      <div class="hidden md:block absolute top-24 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-aristeus-navy via-aristeus-green to-aristeus-navy"></div>
+      <div class="hidden md:block absolute top-24 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-aristeus-navy/30 via-aristeus-green/70 to-aristeus-navy/30"></div>
       
       <!-- Step 1 -->
       <ScrollReveal animation="fade-up" delay={0}>
         <div class="relative text-center">
-          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-aristeus-navy border-2 border-aristeus-green flex items-center justify-center relative z-10">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-aristeus-navy text-text-inverse border-2 border-aristeus-green shadow-[0_10px_24px_rgba(11,35,65,0.16)] flex items-center justify-center relative z-10">
             <span class="text-2xl">🛰️</span>
           </div>
           <div class="font-data text-5xl font-bold text-aristeus-green/20 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-0">01</div>
@@ -34,7 +34,7 @@ import ScrollReveal from '../animations/ScrollReveal.astro';
       <!-- Step 2 -->
       <ScrollReveal animation="fade-up" delay={200}>
         <div class="relative text-center">
-          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-aristeus-navy border-2 border-aristeus-green flex items-center justify-center relative z-10">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-aristeus-navy text-text-inverse border-2 border-aristeus-green shadow-[0_10px_24px_rgba(11,35,65,0.16)] flex items-center justify-center relative z-10">
             <span class="text-2xl">🧠</span>
           </div>
           <div class="font-data text-5xl font-bold text-aristeus-green/20 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-0">02</div>
@@ -48,7 +48,7 @@ import ScrollReveal from '../animations/ScrollReveal.astro';
       <!-- Step 3 -->
       <ScrollReveal animation="fade-up" delay={400}>
         <div class="relative text-center">
-          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-aristeus-navy border-2 border-aristeus-green flex items-center justify-center relative z-10">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-aristeus-navy text-text-inverse border-2 border-aristeus-green shadow-[0_10px_24px_rgba(11,35,65,0.16)] flex items-center justify-center relative z-10">
             <span class="text-2xl">📋</span>
           </div>
           <div class="font-data text-5xl font-bold text-aristeus-green/20 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-0">03</div>

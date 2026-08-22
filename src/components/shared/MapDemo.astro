@@ -14,7 +14,15 @@ import MapDemoReact from './MapDemoReact.tsx';
     </div>
     
     <!-- React Island - client only, no SSR -->
-    <MapDemoReact client:only="react" />
+    <MapDemoReact 
+      client:only="react" 
+      herdPlan={{
+        herdId: '#1',
+        originPasture: 'Potrero #9',
+        daysUntilMove: 3,
+        targetPasture: 'Potrero #12'
+      }}
+    />
     
     <p class="text-center text-text-secondary text-sm mt-4">
       Demo ilustrativa con datos de ejemplo

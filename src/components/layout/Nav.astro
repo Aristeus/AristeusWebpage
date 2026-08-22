@@ -16,7 +16,7 @@ const navLinks = [
 ];
 ---
 
-<nav class={`fixed top-0 left-0 right-0 z-50 glass border-b border-border-subtle ${className}`}>
+<nav class={`fixed top-0 left-0 right-0 z-50 glass border-b border-border-subtle shadow-[0_10px_30px_rgba(11,35,65,0.06)] ${className}`}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
@@ -42,16 +42,28 @@ const navLinks = [
         ))}
       </div>
 
-      <!-- Right side: Language + CTA -->
+      <!-- Right side: Language + Auth -->
       <div class="hidden md:flex items-center gap-4">
         <LanguageSwitch />
-        <Button 
-          text="Solicitar Demo" 
-          href="/contacto" 
-          variant="primary" 
-          color="green" 
-          size="sm"
-        />
+        
+        <!-- Auth state: rendered by JS -->
+        <div id="auth-desktop" class="flex items-center gap-3">
+          <a href="/login" id="nav-login-desktop" class="text-text-secondary hover:text-text-primary font-medium transition-smooth text-sm">
+            Iniciar sesión
+          </a>
+          <a href="/register" id="nav-register-desktop" class="px-4 py-2 rounded-lg bg-aristeus-green text-text-inverse text-sm font-medium hover:bg-aristeus-secondary transition-smooth">
+            Registrarse
+          </a>
+        </div>
+        
+        <div id="nav-user-desktop" class="hidden items-center gap-3">
+          <a href="/?dashboard=1" class="text-text-secondary hover:text-text-primary font-medium transition-smooth text-sm">
+            Mi panel
+          </a>
+          <button id="nav-logout-desktop" class="px-4 py-2 rounded-lg border border-border-subtle text-text-primary text-sm font-medium hover:bg-bg-secondary transition-smooth">
+            Cerrar sesión
+          </button>
+        </div>
       </div>
 
       <!-- Mobile menu button -->
@@ -83,13 +95,25 @@ const navLinks = [
       ))}
       <div class="pt-3 border-t border-border-subtle flex items-center justify-between">
         <LanguageSwitch />
-        <Button 
-          text="Solicitar Demo" 
-          href="/contacto" 
-          variant="primary" 
-          color="green" 
-          size="sm"
-        />
+        
+        <!-- Mobile auth -->
+        <div id="auth-mobile" class="flex items-center gap-2">
+          <a href="/login" id="nav-login-mobile" class="text-text-secondary hover:text-text-primary font-medium text-sm">
+            Iniciar sesión
+          </a>
+          <a href="/register" id="nav-register-mobile" class="px-3 py-1.5 rounded-lg bg-aristeus-green text-text-inverse text-sm font-medium hover:bg-aristeus-secondary transition-smooth">
+            Registrarse
+          </a>
+        </div>
+        
+        <div id="nav-user-mobile" class="hidden items-center gap-2">
+          <a href="/?dashboard=1" class="text-text-secondary hover:text-text-primary font-medium text-sm">
+            Mi panel
+          </a>
+          <button id="nav-logout-mobile" class="px-3 py-1.5 rounded-lg border border-border-subtle text-text-primary text-sm font-medium hover:bg-bg-secondary transition-smooth">
+            Cerrar sesión
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -117,4 +141,47 @@ const navLinks = [
       });
     });
   }
+
+  // Auth state
+  function updateAuthUI() {
+    const session = localStorage.getItem('aristeus_session');
+    const isAuth = !!session;
+    
+    const authDesktop = document.getElementById('auth-desktop');
+    const userDesktop = document.getElementById('nav-user-desktop');
+    const authMobile = document.getElementById('auth-mobile');
+    const userMobile = document.getElementById('nav-user-mobile');
+    
+    if (isAuth) {
+      authDesktop?.classList.add('hidden');
+      userDesktop?.classList.remove('hidden');
+      userDesktop?.classList.add('flex');
+      authMobile?.classList.add('hidden');
+      userMobile?.classList.remove('hidden');
+      userMobile?.classList.add('flex');
+    } else {
+      authDesktop?.classList.remove('hidden');
+      userDesktop?.classList.add('hidden');
+      userDesktop?.classList.remove('flex');
+      authMobile?.classList.remove('hidden');
+      userMobile?.classList.add('hidden');
+      userMobile?.classList.remove('flex');
+    }
+  }
+
+  // Logout handlers
+  document.getElementById('nav-logout-desktop')?.addEventListener('click', () => {
+    localStorage.removeItem('aristeus_session');
+    updateAuthUI();
+    window.location.href = '/';
+  });
+
+  document.getElementById('nav-logout-mobile')?.addEventListener('click', () => {
+    localStorage.removeItem('aristeus_session');
+    updateAuthUI();
+    window.location.href = '/';
+  });
+
+  // Initial state
+  updateAuthUI();
 </script>

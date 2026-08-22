@@ -1,41 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Aristeus Corporate Palette */
-  --aristeus-navy: #1B2A4A;
-  --aristeus-green: #7AB929;
-  
-  /* Backgrounds */
-  --bg-primary: #0D1117;
-  --bg-secondary: #161B22;
-  --bg-card: #1C2333;
-  
-  /* Text */
-  --text-primary: #E8ECF1;
-  --text-secondary: #8B949E;
-  
-  /* Borders */
-  --border-subtle: #30363D;
-  
-  /* Grass Gauge Palette */
-  --gg-green-dark: #1B7A2B;
-  --gg-green-mid: #4CAF50;
-  --gg-green-light: #7AB929;
-  --gg-gradient: linear-gradient(135deg, #1B7A2B, #7AB929);
-  
-  /* CattleVision Palette */
-  --cv-charcoal: #2C3E3E;
-  --cv-gold: #B8963E;
-  --cv-dark: #1A2424;
-  --cv-gradient: linear-gradient(135deg, #2C3E3E, #B8963E);
-  
+  /* Brand core */
+  --aristeus-navy: #0B2341;
+  --aristeus-green: #6BA539;
+  --aristeus-secondary: #355E3B;
+  --technical-graphite: #2B2F36;
+  --mineral-white: #F5F7F4;
+  --mist-gray: #D8DEE3;
+
+  /* Semantic palette */
+  --bg-primary: var(--mineral-white);
+  --bg-secondary: var(--mist-gray);
+  --bg-card: #FFFFFF;
+  --text-primary: var(--technical-graphite);
+  --text-secondary: var(--aristeus-secondary);
+  --text-inverse: var(--mineral-white);
+  --border-subtle: var(--mist-gray);
+  --heading: var(--aristeus-navy);
+  --link: var(--aristeus-navy);
+  --link-hover: var(--aristeus-secondary);
+  --button-primary-bg: var(--aristeus-navy);
+  --button-primary-text: var(--mineral-white);
+  --button-secondary-bg: var(--aristeus-green);
+  --button-secondary-text: var(--mineral-white);
+
+  /* Product palette constrained to brand system */
+  --gg-green-dark: var(--aristeus-secondary);
+  --gg-green-mid: var(--aristeus-green);
+  --gg-green-light: var(--aristeus-green);
+  --gg-gradient: linear-gradient(135deg, var(--aristeus-secondary), var(--aristeus-green));
+  --cv-charcoal: var(--technical-graphite);
+  --cv-gold: var(--aristeus-green);
+  --cv-dark: var(--aristeus-navy);
+  --cv-gradient: linear-gradient(135deg, var(--technical-graphite), var(--aristeus-green));
+
   /* Typography */
   --font-heading: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
   --font-data: 'JetBrains Mono', monospace;
 }
 
@@ -56,10 +62,10 @@ body {
 /* Selection color */
 ::selection {
   background-color: var(--aristeus-green);
-  color: var(--bg-primary);
+  color: var(--text-inverse);
 }
 
-/* Scrollbar customization (dark theme) */
+/* Scrollbar customization */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -86,10 +92,11 @@ body {
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(28, 35, 51, 0.6);
+  background: rgba(245, 247, 244, 0.82);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
+  box-shadow: 0 18px 40px rgba(11, 35, 65, 0.08);
 }
 
 /* Gradient borders */
@@ -105,11 +112,19 @@ body {
 
 /* Hover glow utilities */
 .hover-glow-green:hover {
-  box-shadow: 0 0 20px rgba(122, 185, 41, 0.3);
+  box-shadow: 0 0 20px rgba(107, 165, 57, 0.28);
 }
 
 .hover-glow-gold:hover {
-  box-shadow: 0 0 20px rgba(184, 150, 62, 0.3);
+  box-shadow: 0 0 20px rgba(53, 94, 59, 0.22);
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
 }
 
 /* Transition utilities */

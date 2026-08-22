@@ -17,12 +17,28 @@ interface BiomassPoint {
   intensity: number;
 }
 
+interface HerdPlanProps {
+  herdId: string | number;
+  originPasture: string;
+  daysUntilMove: number;
+  targetPasture: string;
+}
+
 interface LayerControllerProps {
   layer: string;
   setLayer: (layer: string) => void;
   selectedPasture: PastureProps;
   setSelectedPasture: (pasture: PastureProps) => void;
 }
+
+const BRAND_COLORS = {
+  navy: '#0B2341',
+  accent: '#6BA539',
+  secondary: '#355E3B',
+  graphite: '#2B2F36',
+  white: '#F5F7F4',
+  border: '#D8DEE3',
+};
 
 // Estancia rural al norte de Santa Cruz, Bolivia (zona de potreros)
 const CENTER = [-17.42, -63.28];
@@ -69,19 +85,19 @@ const biomassHeatmap: BiomassPoint[] = [
 
 function getStatusColor(status: PastureProps['status']): string {
   switch (status) {
-    case 'available': return '#1B7A2B';
-    case 'resting': return '#B8963E';
-    case 'depleted': return '#DC2626';
-    default: return '#30363D';
+    case 'available': return BRAND_COLORS.accent;
+    case 'resting': return BRAND_COLORS.secondary;
+    case 'depleted': return BRAND_COLORS.navy;
+    default: return BRAND_COLORS.graphite;
   }
 }
 
 function getIntensityColor(intensity: number): string {
-  if (intensity > 0.8) return '#1B7A2B';
-  if (intensity > 0.6) return '#4CAF50';
-  if (intensity > 0.4) return '#7AB929';
-  if (intensity > 0.2) return '#D97706';
-  return '#DC2626';
+  if (intensity > 0.8) return BRAND_COLORS.secondary;
+  if (intensity > 0.6) return BRAND_COLORS.accent;
+  if (intensity > 0.4) return BRAND_COLORS.navy;
+  if (intensity > 0.2) return BRAND_COLORS.graphite;
+  return BRAND_COLORS.border;
 }
 
 function LayerController({ layer, setLayer, selectedPasture, setSelectedPasture }: LayerControllerProps) {
@@ -117,9 +133,9 @@ function LayerController({ layer, setLayer, selectedPasture, setSelectedPasture 
         <GeoJSON
           data={pasturePolygons}
           style={(feature) => ({
-            fillColor: feature ? getStatusColor((feature.properties as PastureProps).status) : '#30363D',
+            fillColor: feature ? getStatusColor((feature.properties as PastureProps).status) : BRAND_COLORS.graphite,
             fillOpacity: 0.5,
-            color: '#fff',
+            color: BRAND_COLORS.white,
             weight: 2
           })}
           onEachFeature={(feature, layer) => {
@@ -133,10 +149,17 @@ function LayerController({ layer, setLayer, selectedPasture, setSelectedPasture 
   );
 }
 
-export default function MapDemoReact() {
+export default function MapDemoReact({ herdPlan }: { herdPlan?: HerdPlanProps } = {}) {
   const [layer, setLayer] = useState('dark');
   const [selectedPasture, setSelectedPasture] = useState<PastureProps>(pasturePolygons.features[0].properties as PastureProps);
   const [mounted, setMounted] = useState(false);
+
+  const plan = herdPlan ?? {
+    herdId: '#1',
+    originPasture: 'Potrero #9',
+    daysUntilMove: 3,
+    targetPasture: 'Potrero #12',
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -158,7 +181,7 @@ export default function MapDemoReact() {
           onClick={() => setLayer('dark')}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
             layer === 'dark' 
-              ? 'bg-aristeus-green text-bg-primary' 
+              ? 'bg-aristeus-green text-text-inverse' 
               : 'glass text-text-secondary hover:text-text-primary'
           }`}
         >
@@ -168,7 +191,7 @@ export default function MapDemoReact() {
           onClick={() => setLayer('biomass')}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
             layer === 'biomass' 
-              ? 'bg-aristeus-green text-bg-primary' 
+              ? 'bg-aristeus-green text-text-inverse' 
               : 'glass text-text-secondary hover:text-text-primary'
           }`}
         >
@@ -178,7 +201,7 @@ export default function MapDemoReact() {
           onClick={() => setLayer('plan')}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
             layer === 'plan' 
-              ? 'bg-aristeus-green text-bg-primary' 
+              ? 'bg-aristeus-green text-text-inverse' 
               : 'glass text-text-secondary hover:text-text-primary'
           }`}
         >
@@ -227,8 +250,8 @@ export default function MapDemoReact() {
               <p className="text-text-secondary text-sm">Estado nutricional</p>
               <p className="flex items-center gap-2 text-text-primary">
                 <span className={`w-2 h-2 rounded-full ${
-                  selectedPasture.biomass > 2000 ? 'bg-green-500' : 
-                  selectedPasture.biomass > 1000 ? 'bg-yellow-500' : 'bg-red-500'
+                  selectedPasture.biomass > 2000 ? 'bg-aristeus-green' : 
+                  selectedPasture.biomass > 1000 ? 'bg-aristeus-secondary' : 'bg-aristeus-navy'
                 }`}></span>
                 {selectedPasture.biomass > 2000 ? 'Alto' : 
                  selectedPasture.biomass > 1000 ? 'Medio' : 'Bajo'}
@@ -245,6 +268,29 @@ export default function MapDemoReact() {
                   : 'Agotado — No pastorear'}
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Herd planning card */}
+      <div className="mt-6 glass rounded-2xl p-6">
+        <h3 className="font-heading font-semibold text-text-primary mb-4">Planificación de movimiento</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div>
+            <p className="text-text-secondary text-sm">Hato</p>
+            <p className="font-data text-xl text-aristeus-green font-semibold">{plan.herdId}</p>
+          </div>
+          <div>
+            <p className="text-text-secondary text-sm">Potrero origen</p>
+            <p className="font-heading text-lg text-text-primary">{plan.originPasture}</p>
+          </div>
+          <div>
+            <p className="text-text-secondary text-sm">En</p>
+            <p className="font-data text-xl text-aristeus-green font-semibold">{plan.daysUntilMove} días</p>
+          </div>
+          <div>
+            <p className="text-text-secondary text-sm">Potrero destino</p>
+            <p className="font-heading text-lg text-text-primary">{plan.targetPasture}</p>
           </div>
         </div>
       </div>

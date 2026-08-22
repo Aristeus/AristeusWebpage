@@ -7,37 +7,39 @@ export default {
       colors: {
         // Aristeus Corporate Palette
         'aristeus': {
-          'navy': '#1B2A4A',
-          'green': '#7AB929',
+          'navy': '#0B2341',
+          'green': '#6BA539',
+          'secondary': '#355E3B',
         },
         // Backgrounds
         'bg': {
-          'primary': '#0D1117',
-          'secondary': '#161B22',
-          'card': '#1C2333',
+          'primary': '#F5F7F4',
+          'secondary': '#D8DEE3',
+          'card': '#FFFFFF',
         },
         // Text
         'text': {
-          'primary': '#E8ECF1',
-          'secondary': '#8B949E',
+          'primary': '#2B2F36',
+          'secondary': '#355E3B',
+          'inverse': '#F5F7F4',
         },
-        'border-subtle': '#30363D',
+        'border-subtle': '#D8DEE3',
         // Grass Gauge Palette
         'gg': {
-          'green-dark': '#1B7A2B',
-          'green-mid': '#4CAF50',
-          'green-light': '#7AB929',
+          'green-dark': '#355E3B',
+          'green-mid': '#6BA539',
+          'green-light': '#6BA539',
         },
         // CattleVision Palette
         'cv': {
-          'charcoal': '#2C3E3E',
-          'gold': '#B8963E',
-          'dark': '#1A2424',
+          'charcoal': '#2B2F36',
+          'gold': '#6BA539',
+          'dark': '#0B2341',
         }
       },
       fontFamily: {
         'heading': ['"Space Grotesk"', 'sans-serif'],
-        'body': ['Inter', 'sans-serif'],
+        'body': ['"IBM Plex Sans"', 'sans-serif'],
         'data': ['"JetBrains Mono"', 'monospace'],
       },
       animation: {
@@ -69,8 +71,8 @@ export default {
         'xs': '2px',
       },
       backgroundImage: {
-        'gg-gradient': 'linear-gradient(135deg, #1B7A2B, #7AB929)',
-        'cv-gradient': 'linear-gradient(135deg, #2C3E3E, #B8963E)',
+        'gg-gradient': 'linear-gradient(135deg, #355E3B, #6BA539)',
+        'cv-gradient': 'linear-gradient(135deg, #2B2F36, #6BA539)',
       },
     },
   },

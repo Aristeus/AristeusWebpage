@@ -10,12 +10,13 @@ import Button from '../shared/Button.astro';
       alt="Pasture satellite view"
       class="w-full h-full object-cover"
     />
-    <div class="absolute inset-0 bg-gradient-to-b from-bg-primary/80 via-bg-primary/60 to-bg-primary/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-primary/92 via-bg-primary/78 to-bg-secondary/72"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(107,165,57,0.18),transparent_32%),radial-gradient(circle_at_left_center,rgba(11,35,65,0.12),transparent_36%)]"></div>
   </div>
   
   <!-- Content -->
   <div class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-20">
-    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-aristeus-green/30 mb-6 animate-fade-in">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-aristeus-green/35 shadow-[0_10px_30px_rgba(11,35,65,0.08)] mb-6 animate-fade-in">
       <span class="text-aristeus-green">🛰️</span>
       <span class="text-sm text-text-secondary" data-i18n="hero.badge">
         Tecnología validada en 3 continentes
@@ -43,14 +44,14 @@ import Button from '../shared/Button.astro';
         text="Ver cómo funciona ↓" 
         href="#como-funciona" 
         variant="outline" 
-        color="white" 
+        color="navy" 
         size="lg"
         class="w-full sm:w-auto"
       />
     </div>
     
     <!-- Stats bar -->
-    <div class="mt-16 md:mt-24 glass rounded-xl p-6 inline-flex flex-wrap items-center justify-center gap-6 md:gap-12 animate-fade-up" style="animation-delay: 0.4s;">
+    <div class="mt-16 md:mt-24 glass rounded-xl p-6 inline-flex flex-wrap items-center justify-center gap-6 md:gap-12 shadow-[0_16px_36px_rgba(11,35,65,0.08)] animate-fade-up" style="animation-delay: 0.4s;">
       <div class="text-center">
         <div class="font-data text-2xl md:text-3xl text-aristeus-green font-semibold">10,000+</div>
         <div class="text-text-secondary text-sm" data-i18n="hero.stat1">ha analizadas</div>
