@@ -3,6 +3,7 @@ import SectionTitle from '../shared/SectionTitle.astro';
 import FeatureCard from '../shared/FeatureCard.astro';
 import Button from '../shared/Button.astro';
 import ScrollReveal from '../animations/ScrollReveal.astro';
+import { iconStrings } from '../icons/Icon';
 ---
 
 <section class="py-20 md:py-32 bg-bg-secondary">
@@ -19,7 +20,7 @@ import ScrollReveal from '../animations/ScrollReveal.astro';
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       <ScrollReveal animation="fade-up" delay={0}>
         <FeatureCard 
-          icon="📊"
+          icon={iconStrings.chartColumn}
           title="Estimación de biomasa por potrero"
           description="Conocimiento preciso de kilogramos de materia seca disponible en cada parcela, actualizado cada 5-10 días."
           accentColor="green"
@@ -37,7 +38,7 @@ import ScrollReveal from '../animations/ScrollReveal.astro';
       
       <ScrollReveal animation="fade-up" delay={200}>
         <FeatureCard 
-          icon="📋"
+          icon={iconStrings.notebookPen}
           title="Plan de rotación automático"
           description="Algoritmo que genera tu calendario de pastoreo óptimo: qué potrero, cuántas cabezas, por cuántos días."
           accentColor="green"
@@ -55,7 +56,7 @@ import ScrollReveal from '../animations/ScrollReveal.astro';
       
       <ScrollReveal animation="fade-up" delay={400}>
         <FeatureCard 
-          icon="📈"
+          icon={iconStrings.chartNoAxesCombined}
           title="Historial y tendencias"
           description="Seguimiento de la productividad de cada potrero a través del tiempo para decisiones a largo plazo."
           accentColor="green"

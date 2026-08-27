@@ -1,6 +1,7 @@
 ---
 import Button from '../shared/Button.astro';
 import LanguageSwitch from '../shared/LanguageSwitch.astro';
+import Icon from '../icons/Icon';
 
 interface Props {
   class?: string;
@@ -57,7 +58,7 @@ const navLinks = [
         </div>
         
         <div id="nav-user-desktop" class="hidden items-center gap-3">
-          <a href="/?dashboard=1" class="text-text-secondary hover:text-text-primary font-medium transition-smooth text-sm">
+          <a href="/dashboard" class="text-text-secondary hover:text-text-primary font-medium transition-smooth text-sm">
             Mi panel
           </a>
           <button id="nav-logout-desktop" class="px-4 py-2 rounded-lg border border-border-subtle text-text-primary text-sm font-medium hover:bg-bg-secondary transition-smooth">
@@ -72,12 +73,8 @@ const navLinks = [
         class="md:hidden p-2 text-text-primary hover:text-aristeus-green transition-smooth"
         aria-label="Toggle menu"
       >
-        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
+        <span id="menu-icon"><Icon name="menu" class="w-6 h-6" client:only="react" /></span>
+        <span id="close-icon" class="hidden"><Icon name="x" class="w-6 h-6" client:only="react" /></span>
       </button>
     </div>
   </div>

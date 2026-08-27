@@ -236,7 +236,7 @@ SECCIÓN 3: NUESTROS PRODUCTOS
 SECCIÓN 4: CÓMO FUNCIONA GRASS GAUGE (producto principal)
 ──────────────────────────────────────────────────────────────
 - Fondo: #161B22
-- SectionTitle: "De la imagen satelital a tu plan de pastoreo
+- SectionTitle: "De la imagen aérea a tu plan de pastoreo
   en 3 pasos"
 - Layout: 3 cards conectadas con línea/flecha horizontal
   - Paso 1: "Capturamos"

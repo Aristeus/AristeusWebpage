@@ -21,7 +21,7 @@ export default function LoginForm() {
     const result = login(email, password);
 
     if (result.success) {
-      window.location.href = '/?dashboard=1';
+      window.location.href = '/dashboard';
     } else {
       setError(result.error || 'Error al iniciar sesión');
       setLoading(false);

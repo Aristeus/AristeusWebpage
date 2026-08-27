@@ -24,7 +24,7 @@ const iconColors = {
 
 <div class={`glass p-6 rounded-xl transition-smooth ${accentStyles[accentColor]} ${className}`}>
   <div class={`text-3xl mb-4 ${iconColors[accentColor]}`}>
-    {icon}
+    <Fragment set:html={icon} />
   </div>
   <h3 class="font-heading text-xl font-semibold text-text-primary mb-2">
     {title}

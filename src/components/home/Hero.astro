@@ -1,5 +1,6 @@
 ---
 import Button from '../shared/Button.astro';
+import Icon from '../icons/Icon';
 ---
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -17,9 +18,9 @@ import Button from '../shared/Button.astro';
   <!-- Content -->
   <div class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-20">
     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-aristeus-green/35 shadow-[0_10px_30px_rgba(11,35,65,0.08)] mb-6 animate-fade-in">
-      <span class="text-aristeus-green">🛰️</span>
+      <span class="text-aristeus-green"><Icon name="drone" class="w-6 h-6" client:only="react" /></span>
       <span class="text-sm text-text-secondary" data-i18n="hero.badge">
-        Tecnología validada en 3 continentes
+        Tecnología de vanguardia para el ganadero moderno
       </span>
     </div>
     
@@ -71,8 +72,6 @@ import Button from '../shared/Button.astro';
   
   <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-    </svg>
+    <Icon name="chevronDown" class="w-6 h-6 text-text-secondary" client:only="react" />
   </div>
 </section>

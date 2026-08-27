@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isAuthenticated } from '../../utils/auth';
+import LoginForm from '../../components/auth/LoginForm.tsx';
+import Icon from '../../components/icons/Icon';
+---
+
+<BaseLayout title="Mi panel" description="Panel principal de Aristeus">
+  <section class="py-20 md:py-32 bg-bg-primary min-h-[80vh]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {
+        isAuthenticated() ? (
+          <div id="dashboard-content">
+            <div class="glass rounded-2xl p-8 max-w-3xl mx-auto text-center">
+              <h1 class="font-heading text-4xl md:text-5xl font-bold text-text-primary mb-4">
+                ¡Bienvenido a Aristeus Paul!
+              </h1>
+              <p class="text-text-secondary text-lg mb-2">
+                Hola, <span id="user-name" class="font-semibold text-aristeus-green"></span>
+              </p>
+              <p class="text-text-secondary mb-8">
+                Tu panel de planificación y visualización de campo está listo.
+              </p>
+              
+              <div id="welcome-message" class="hidden mb-8">
+                <div class="bg-aristeus-green/10 border border-aristeus-green/20 rounded-xl p-4">
+                  <p class="text-aristeus-green font-medium">🎉 Tu cuenta fue creada exitosamente</p>
+                </div>
+              </div>
+              
+              <div class="grid md:grid-cols-2 gap-4 mb-8">
+                <a href="/#demo-mapa" class="glass rounded-xl p-6 hover:shadow-lg transition-smooth text-left">
+                  <h3 class="font-heading font-semibold text-text-primary mb-2">🗺️ Visualiza tu campo</h3>
+                  <p class="text-text-secondary text-sm">Explora el mapa interactivo con datos satelitales</p>
+                </a>
+                <a href="/productos" class="glass rounded-xl p-6 hover:shadow-lg transition-smooth text-left">
+                  <h3 class="font-heading font-semibold text-text-primary mb-2">🌿 Productos</h3>
+                  <p class="text-text-secondary text-sm">Conocé GrassGauge y CattleVision</p>
+                </a>
+              </div>
+
+              <button
+                id="logout-btn"
+                class="px-6 py-3 rounded-xl bg-aristeus-navy text-text-inverse font-medium hover:bg-aristeus-green transition-smooth"
+              >
+                Cerrar sesión
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div id="dashboard-login">
+            <div class="text-center mb-8">
+              <h1 class="font-heading text-3xl md:text-4xl font-bold text-text-primary mb-4">
+                Mi panel
+              </h1>
+              <p class="text-text-secondary text-lg">
+                Iniciá sesión para acceder a tu planificación
+              </p>
+            </div>
+            <LoginForm client:only="react" />
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <div class="aristeus-dashboard-widget">
+    <div class="dashboard-card">
+      <style>
+        .aristeus-dashboard-widget {
+          display: flex;
+          justify-content: center;
+          padding: 24px 16px 48px;
+          background: linear-gradient(180deg, #f3f6f2 0%, #e9f0e5 100%);
+        }
+        .dashboard-card {
+          width: 100%;
+          max-width: 440px;
+          background: #ffffff;
+          border-radius: 28px;
+          border: 1px solid #e5ebe3;
+          box-shadow: 0 18px 45px rgba(11, 35, 65, 0.10);
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+        .tablet-notch {
+          width: 92px;
+          height: 12px;
+          margin: 10px auto 0;
+          background: #1e293b;
+          border-radius: 999px;
+        }
+        .app-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 14px 16px;
+          border-bottom: 1px solid #eef2ec;
+          gap: 10px;
+        }
+        .drone-img {
+          width: 42px;
+          height: 42px;
+          object-fit: contain;
+        }
+        .speech-bubble {
+          flex: 1;
+          background: #e8f5e9;
+          border: 1px solid #c8e6c9;
+          border-radius: 14px;
+          padding: 6px 10px;
+          text-align: center;
+        }
+        .speech-text {
+          font-size: 10px;
+          font-weight: 700;
+          color: #2e7d32;
+          line-height: 1.3;
+        }
+        .menu-icon {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+          cursor: pointer;
+          padding: 4px;
+        }
+        .menu-bar {
+          width: 18px;
+          height: 2px;
+          background: #334155;
+          border-radius: 2px;
+        }
+        .tabs-nav {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          border-bottom: 1px solid #eef2ec;
+          background: #fafbf9;
+        }
+        .tab-item {
+          padding: 10px 0;
+          text-align: center;
+          font-size: 11px;
+          font-weight: 600;
+          color: #64748b;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
+        .tab-active {
+          color: #2e7d32;
+          border-bottom: 2px solid #2e7d32;
+          font-weight: 700;
+        }
+        .date-sub {
+          text-align: center;
+          font-size: 9px;
+          color: #94a3b8;
+          padding: 6px 0;
+          font-weight: 700;
+          letter-spacing: 0.8px;
+          background: #fafbf9;
+        }
+        .main-content {
+          padding: 12px 16px;
+        }
+        .map-box {
+          position: relative;
+          width: 100%;
+          height: 200px;
+          border-radius: 12px;
+          overflow: hidden;
+          border: 1px solid #cbd5e1;
+          background: #f1f5f9;
+        }
+        .map-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        .camera-guide {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 160px;
+          height: 160px;
+          border: 2px solid #ffffff;
+          background: transparent;
+          pointer-events: none;
+        }
+        .map-buttons {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          z-index: 20;
+        }
+        .map-btn {
+          background: rgba(255, 255, 255, 0.92);
+          border: none;
+          border-radius: 12px;
+          padding: 5px 9px;
+          font-size: 10px;
+          font-weight: 700;
+          cursor: pointer;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .cards-section {
+          margin-top: 10px;
+        }
+        .cards-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+        .card {
+          background: #ffffff;
+          border-radius: 12px;
+          padding: 10px;
+          border: 1px solid #e2e8f0;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .card-title {
+          font-size: 9px;
+          font-weight: 700;
+          color: #94a3b8;
+          text-align: center;
+          letter-spacing: 0.4px;
+        }
+        .big-number {
+          font-size: 16px;
+          font-weight: 800;
+          color: #2e7d32;
+          margin: 4px 0;
+          text-align: center;
+        }
+        .footer-nav {
+          background: #263238;
+          border-radius: 16px 16px 0 0;
+          padding: 12px 16px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          color: #ffffff;
+          margin-top: 6px;
+        }
+        .nav-icon {
+          font-size: 16px;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+        .user-profile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .user-name {
+          font-size: 8px;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+        }
+      </style>
+
+      <div class="tablet-notch"></div>
+
+      <header class="app-header">
+        <img src="/assets/DronAvatar.png" alt="Dron" class="drone-img" />
+        <div class="speech-bubble">
+          <p class="speech-text">¡ESTAS VIENDO TU NUEVO PLAN DE ROTACIÓN!</p>
+        </div>
+        <div class="menu-icon" title="Opciones">
+          <div class="menu-bar"></div>
+          <div class="menu-bar"></div>
+          <div class="menu-bar"></div>
+        </div>
+      </header>
+
+      <nav class="tabs-nav">
+        <button class="tab-item">MI TERRENO</button>
+        <button class="tab-item tab-active">MI PLANIFICACIÓN</button>
+        <button class="tab-item">MIS DATOS</button>
+      </nav>
+
+      <div class="date-sub">
+        POTRERO #01 // AGOSTO 2026
+      </div>
+
+      <main class="main-content">
+        <div class="map-box">
+          <img src="/assets/MapaLotes.png" alt="Mapa" class="map-img" />
+          <div class="camera-guide"></div>
+          <div class="map-buttons">
+            <button class="map-btn">Lotes</button>
+            <button class="map-btn">🧭</button>
+          </div>
+        </div>
+
+        <div class="cards-section">
+          <div class="cards-grid">
+            <div class="card">
+              <div>
+                <div class="card-title" style="text-align: left;">PESO TOTAL > Mg</div>
+                <div class="big-number">385</div>
+              </div>
+              <div style="font-size: 9px; color: #64748b;">
+                <div>Porcentaje de materia : <b>28 </b></div>
+                <div style="font-size: 9px; margin-top: 2px;">Porcentaje de materia muerta seca:<b> 5</b> mg</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div>
+                <div class="card-title">Materia verde por m2</div>
+                <div class="big-number">89 </div>
+              </div>
+              <div style="font-size: 9px; color: #64748b;">
+                materia muerta seca por m2: <b> 19 </b>
+                <div style="font-size: 9px; margin-top: 2px;">Altura promedio<b> 13</b> cm</div>    
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer-nav">
+        <button class="nav-icon">🏠</button>
+        <button class="nav-icon">🌾</button>
+        <button class="nav-icon">🌐</button>
+        <button class="nav-icon"><Icon name="speaker" class="w-5 h-5" client:only="react" /></button>
+        <div class="user-profile">
+          <span style="font-size: 14px;">👤</span>
+          <span class="user-name">RICHARD</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const user = localStorage.getItem('aristeus_session');
+    
+    if (user) {
+      const userData = JSON.parse(user);
+      const nameEl = document.getElementById('user-name');
+      if (nameEl) nameEl.textContent = userData.name || 'Usuario';
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('welcome') === '1') {
+      const welcomeEl = document.getElementById('welcome-message');
+      if (welcomeEl) welcomeEl.classList.remove('hidden');
+    }
+
+    document.getElementById('logout-btn')?.addEventListener('click', () => {
+      localStorage.removeItem('aristeus_session');
+      window.location.href = '/';
+    });
+  </script>
+</BaseLayout>
+

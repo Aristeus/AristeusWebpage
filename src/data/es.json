@@ -7,7 +7,7 @@
     "ctaDemo": "Solicitar Demo"
   },
   "hero": {
-    "badge": "🛰️ Tecnología validada en 3 continentes",
+    "badge": " Tecnología de vanguardia para el ganadero moderno",
     "headline": "Tecnología de vanguardia para una ganadería más rentable y sostenible",
     "subheadline": "Medimos la biomasa de tus pastizales con Machine Learning para que cada hectárea rinda al máximo sin degradar tu tierra",
     "cta1": "Solicita tu análisis gratuito",
@@ -31,10 +31,10 @@
     "title": "Dos soluciones. Un objetivo: ganadería inteligente.",
     "grassGauge": {
       "name": "Grass Gauge",
-      "subtitle": "Planificación de pastoreo con visión satelital",
+      "subtitle": "Planificación de pastoreo con visión computacional",
       "description": "Medimos biomasa, determinamos nutrientes y generamos tu plan de rotación optimizado",
       "features": [
-        { "icon": "🛰️", "text": "Imágenes satelitales cada 5-10 días" },
+        { "icon": "🛰️", "text": "Imágenes aéreas cada 5-10 días" },
         { "icon": "🧠", "text": "ML para estimación de biomasa y nutrientes" },
         { "icon": "📋", "text": "Plan de pastoreo listo para ejecutar" }
       ],
@@ -55,12 +55,12 @@
     }
   },
   "howItWorks": {
-    "title": "De la imagen satelital a tu plan de pastoreo en 3 pasos",
+    "title": "De la imagen aerea a tu plan de pastoreo en 3 pasos",
     "steps": [
       {
         "number": "01",
         "title": "Capturamos",
-        "description": "Obtenemos imágenes multiespectrales de tus potreros cada 5-10 días vía satélite"
+        "description": "Obtenemos imágenes multiespectrales de tus potreros cada 5-10 días mediante drones."
       },
       {
         "number": "02",
@@ -77,7 +77,7 @@
   "mapDemo": {
     "title": "Visualiza tu campo como nunca antes",
     "buttons": {
-      "satellite": "Vista Satelital",
+      "satellite": "Visión Computacional",
       "biomass": "Biomasa",
       "plan": "Plan Pastoreo"
     },
@@ -105,11 +105,11 @@
   "technology": {
     "title": "Tecnología de precisión para el campo",
     "items": [
-      { "icon": "🛰️", "title": "Imágenes Multiespectrales", "description": "Capturamos datos de satélites de alta resolución cada 5-10 días" },
+      { "icon": "🛰️", "title": "Imágenes Multiespectrales", "description": "Capturamos con drones fotográfias de alta resolución cada 5-10 días" },
       { "icon": "🧠", "title": "Machine Learning", "description": "Modelos entrenados con datos reales de Australia y validados en Bolivia" },
       { "icon": "📊", "title": "Analítica Predictiva", "description": "Proyecciones de crecimiento y recomendaciones basadas en datos" }
     ],
-    "pipeline": "Satélite → Procesamiento → Modelo ML → Dashboard → Plan",
+    "pipeline": "Adquisición Aérea → Procesamiento → Modelo ML → Dashboard → Plan",
     "badge": "Desarrollado con datos reales de Australia. Validado en Bolivia."
   },
   "backing": {

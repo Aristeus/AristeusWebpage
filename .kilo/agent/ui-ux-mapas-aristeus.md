@@ -105,6 +105,6 @@ interface PastureProps {
 
 ## Extensiones futuras
 - Cargar polígonos reales desde API backend
-- Filtros por fecha de satélite
+- Filtros por fecha de dron
 - Modo comparación lado a lado (antes/después)
 - Exportar reporte PDF del potrero

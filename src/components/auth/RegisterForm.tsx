@@ -35,7 +35,7 @@ export default function RegisterForm() {
     const result = register(name, email, password);
 
     if (result.success) {
-      window.location.href = '/login?registered=1';
+      window.location.href = '/dashboard?welcome=1';
     } else {
       setError(result.error || 'Error al registrarse');
       setLoading(false);

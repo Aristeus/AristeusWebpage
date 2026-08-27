@@ -1,6 +1,7 @@
 ---
 import SectionTitle from '../shared/SectionTitle.astro';
 import ScrollReveal from '../animations/ScrollReveal.astro';
+import Icon from '../icons/Icon';
 ---
 
 <section class="py-20 md:py-32 bg-bg-secondary" id="problema">
@@ -44,7 +45,7 @@ import ScrollReveal from '../animations/ScrollReveal.astro';
           </div>
           
           <div class="flex items-start gap-4 p-6 glass rounded-xl border-l-4 border-aristeus-secondary">
-            <div class="text-2xl">📊</div>
+            <div class="text-2xl"><Icon name="chartColumn" class="w-6 h-6" client:only="react" /></div>
             <div>
               <h3 class="font-heading font-semibold text-text-primary text-lg mb-1">
                 Reducción de capacidad de carga

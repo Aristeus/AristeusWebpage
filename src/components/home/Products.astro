@@ -2,6 +2,7 @@
 import SectionTitle from '../shared/SectionTitle.astro';
 import Button from '../shared/Button.astro';
 import ScrollReveal from '../animations/ScrollReveal.astro';
+import Icon from '../icons/Icon';
 ---
 
 <section class="py-20 md:py-32 bg-bg-primary" id="productos">
@@ -35,15 +36,15 @@ import ScrollReveal from '../animations/ScrollReveal.astro';
           
           <div class="space-y-3 mb-6">
             <div class="flex items-center gap-3 text-sm">
-              <span class="text-gg-green-mid">🛰️</span>
+              <span class="text-gg-green-mid"><Icon name="drone" class="w-6 h-6" client:only="react" /></span>
               <span class="text-text-secondary">Imágenes satelitales cada 5-10 días</span>
             </div>
             <div class="flex items-center gap-3 text-sm">
-              <span class="text-gg-green-mid">🧠</span>
+              <span class="text-gg-green-mid"><Icon name="brain" class="w-6 h-6" client:only="react" /></span>
               <span class="text-text-secondary">ML para estimación de biomasa y nutrientes</span>
             </div>
             <div class="flex items-center gap-3 text-sm">
-              <span class="text-gg-green-mid">📋</span>
+              <span class="text-gg-green-mid"><Icon name="notebookPen" class="w-6 h-6" client:only="react" /></span>
               <span class="text-text-secondary">Plan de pastoreo listo para ejecutar</span>
             </div>
           </div>
