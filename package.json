@@ -2,7 +2,7 @@
   "name": "aristeus-landing",
   "type": "module",
   "version": "1.0.0",
-  "description": "Landing page multi-producto para Aristeus - AgTech boliviano con ML y visión satelital",
+  "description": "Landing page multi-producto para Aristeus - AgTech boliviano con ML y visión computacional",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

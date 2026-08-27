@@ -9,7 +9,7 @@ CONTEXTO DE MARCA
 ARISTEUS es la empresa madre. Tiene dos productos:
 
 1. GRASS GAUGE — Producto principal (listo para mercado)
-   Usa ML + imágenes satelitales para medir biomasa de pastizales,
+   Usa ML + visión computacional para medir biomasa de pastizales,
    determinar contenido nutricional y generar planes de pastoreo
    optimizados. Evita la degradación de tierras por sobrepastoreo.
 
@@ -173,7 +173,7 @@ SECCIÓN 1: HERO
 - Centro de la pantalla:
   - Badge pequeño: "🛰️ Tecnología validada en 3 continentes"
     con borde sutil y glassmorphism
-  - Headline H1: "Inteligencia satelital para una ganadería
+  - Headline H1: "Inteligencia Artificial y visión computacional para una ganadería
     más rentable y sostenible"
   - Subheadline: "Medimos la biomasa de tus pastizales con
     Machine Learning para que cada hectárea rinda al máximo
@@ -210,11 +210,11 @@ SECCIÓN 3: NUESTROS PRODUCTOS
   CARD GRASS GAUGE (borde izquierdo con --gg-gradient):
   - Logo Grass Gauge arriba
   - Título: "Grass Gauge"
-  - Subtítulo: "Planificación de pastoreo con visión satelital"
+  - Subtítulo: "Planificación de pastoreo con visión computacional"
   - Descripción breve: "Medimos biomasa, determinamos nutrientes
     y generamos tu plan de rotación optimizado"
   - 3 features mini con ícono:
-    - 🛰️ Imágenes satelitales cada 5-10 días
+    - 🛰️ Imágenes aereas cada 5-10 días
     - 🧠 ML para estimación de biomasa y nutrientes
     - 📋 Plan de pastoreo listo para ejecutar
   - Badge: "DISPONIBLE AHORA"

@@ -185,7 +185,7 @@ export default function MapDemoReact({ herdPlan }: { herdPlan?: HerdPlanProps } 
               : 'glass text-text-secondary hover:text-text-primary'
           }`}
         >
-          Vista Satelital
+          Vista Aerea
         </button>
         <button
           onClick={() => setLayer('biomass')}
