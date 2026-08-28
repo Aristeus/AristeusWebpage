@@ -204,34 +204,32 @@ SECCIÓN 2: EL PROBLEMA
 SECCIÓN 3: NUESTROS PRODUCTOS
 ────────────────────────────────
 - Fondo: #0D1117
-- SectionTitle: "Dos soluciones. Un objetivo: ganadería inteligente."
+- SectionTitle: "Dos soluciones. Un objetivo: ganadería de precisión basada en datos."
 - Layout: dos cards grandes lado a lado
 
   CARD GRASS GAUGE (borde izquierdo con --gg-gradient):
   - Logo Grass Gauge arriba
   - Título: "Grass Gauge"
   - Subtítulo: "Planificación de pastoreo con visión computacional"
-  - Descripción breve: "Medimos biomasa, determinamos nutrientes
-    y generamos tu plan de rotación optimizado"
+  - Descripción breve: "Estimamos biomasa disponible (t MS/ha), calidad forrajera y generamos tu plan de rotación optimizado."
   - 3 features mini con ícono:
-    - 🛰️ Imágenes aereas cada 5-10 días
+    - 🛰️ Relevamiento aéreo de alta resolución por ciclo de pastoreo
     - 🧠 ML para estimación de biomasa y nutrientes
     - 📋 Plan de pastoreo listo para ejecutar
-  - Badge: "DISPONIBLE AHORA"
-  - Botón: "Conocer Grass Gauge →" (verde)
+  - Badge: "ACCESO ANTICIPADO"
+  - Botón: "Explorar Grass Gauge →" (verde)
 
   CARD CATTLEVISION (borde izquierdo con --cv-gradient):
   - Logo CattleVision arriba
-  - Título: "CattleVision"
+  - Título: "Cattle Vision"
   - Subtítulo: "Pesaje de ganado con drones y visión artificial"
-  - Descripción breve: "Estimamos el peso de tu ganado con
-    drones y LiDAR, sin estrés animal ni manejo físico"
+  - Descripción breve: "Monitoreamos la ganancia de peso y condición corporal con visión computacional, sin estrés ni pesaje en brete."
   - 3 features mini con ícono:
-    - 🚁 Drones + LiDAR
-    - 👁️ Visión artificial 3D
-    - ⚖️ Estimación de peso precisa
+    - 🚁 Fotogrametría y reconstrucción volumétrica 3D
+    - 👁️ Modelos biométricos de estimación de peso individual
+    - ⚖️ Curvas de evolución y ganancia diaria de peso (GDP)
   - Badge: "PRÓXIMAMENTE" (con borde dorado)
-  - Botón: "Más información →" (dorado/outline)
+  - Botón: "Conocer Cattle Vision →" (dorado/outline)
 
 SECCIÓN 4: CÓMO FUNCIONA GRASS GAUGE (producto principal)
 ──────────────────────────────────────────────────────────────
@@ -242,7 +240,7 @@ SECCIÓN 4: CÓMO FUNCIONA GRASS GAUGE (producto principal)
   - Paso 1: "Capturamos"
     Ícono: satélite
     "Obtenemos imágenes multiespectrales de tus potreros
-    cada 5-10 días vía satélite"
+    Relevamiento aéreo de alta resolución por ciclo de pastoreo vía satélite"
   - Paso 2: "Analizamos"
     Ícono: cerebro/red neuronal
     "Nuestro modelo de ML procesa las imágenes para estimar

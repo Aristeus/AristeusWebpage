@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionTitle from '../components/shared/SectionTitle.astro';
 import ScrollReveal from '../components/animations/ScrollReveal.astro';
 import Button from '../components/shared/Button.astro';
+import Icon from '../components/icons/Icon';
 ---
 
 <BaseLayout title="Nosotros" description="Tecnología boliviana para el campo latinoamericano. Conoce el equipo detrás de Aristeus.">
@@ -27,7 +28,7 @@ import Button from '../components/shared/Button.astro';
         <ScrollReveal animation="slide-right">
           <div class="glass rounded-2xl p-8 h-full">
             <div class="w-12 h-12 rounded-xl bg-aristeus-navy flex items-center justify-center mb-6">
-              <span class="text-2xl">🎯</span>
+              <span class="text-2xl"><Icon name="goal" class="w-6 h-6" client:only="react" /></span>
             </div>
             <h2 class="font-heading text-2xl font-bold text-text-primary mb-4">Misión</h2>
             <p class="text-text-secondary leading-relaxed">
@@ -105,7 +106,7 @@ import Button from '../components/shared/Button.astro';
             </div>
             <div class="flex-shrink-0 w-4 h-4 rounded-full bg-cv-gold mt-1"></div>
             <div class="flex-grow glass rounded-xl p-6 border border-cv-gold/30">
-              <h3 class="font-heading font-semibold text-text-primary mb-2">Desarrollo CattleVision</h3>
+              <h3 class="font-heading font-semibold text-text-primary mb-2">Desarrollo Cattle Vision</h3>
               <p class="text-text-secondary text-sm">Trabajando en pesaje de ganado con drones y LiDAR. Próximamente disponible.</p>
             </div>
           </div>

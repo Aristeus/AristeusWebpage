@@ -28,30 +28,30 @@
     "bridge": "¿Y si pudieras ver exactamente cuánto pasto tiene cada potrero antes de decidir?"
   },
   "products": {
-    "title": "Dos soluciones. Un objetivo: ganadería inteligente.",
+    "title": "Dos soluciones. Un objetivo: ganadería de precisión basada en datos.",
     "grassGauge": {
       "name": "Grass Gauge",
       "subtitle": "Planificación de pastoreo con visión computacional",
-      "description": "Medimos biomasa, determinamos nutrientes y generamos tu plan de rotación optimizado",
+      "description": "Estimamos biomasa disponible (t MS/ha), calidad forrajera y generamos tu plan de rotación optimizado.",
       "features": [
-        { "icon": "🛰️", "text": "Imágenes aéreas cada 5-10 días" },
+        { "icon": "🛰️", "text": "Relevamiento aéreo de alta resolución por ciclo de pastoreo" },
         { "icon": "🧠", "text": "ML para estimación de biomasa y nutrientes" },
         { "icon": "📋", "text": "Plan de pastoreo listo para ejecutar" }
       ],
-      "badge": "DISPONIBLE AHORA",
-      "cta": "Conocer Grass Gauge →"
+      "badge": "ACCESO ANTICIPADO",
+      "cta": "Explorar Grass Gauge →"
     },
     "cattleVision": {
-      "name": "CattleVision",
+      "name": "Cattle Vision",
       "subtitle": "Pesaje de ganado con drones y visión artificial",
-      "description": "Estimamos el peso de tu ganado con drones y LiDAR, sin estrés animal ni manejo físico",
+      "description": "Monitoreamos la ganancia de peso y condición corporal con visión computacional, sin estrés ni pesaje en brete.",
       "features": [
-        { "icon": "🚁", "text": "Drones + LiDAR" },
-        { "icon": "👁️", "text": "Visión artificial 3D" },
-        { "icon": "⚖️", "text": "Estimación de peso precisa" }
+        { "icon": "🚁", "text": "Fotogrametría y reconstrucción volumétrica 3D" },
+        { "icon": "👁️", "text": "Modelos biométricos de estimación de peso individual" },
+        { "icon": "⚖️", "text": "Curvas de evolución y ganancia diaria de peso (GDP)" }
       ],
       "badge": "PRÓXIMAMENTE",
-      "cta": "Más información →"
+      "cta": "Conocer Cattle Vision →"
     }
   },
   "howItWorks": {
@@ -60,7 +60,7 @@
       {
         "number": "01",
         "title": "Capturamos",
-        "description": "Obtenemos imágenes multiespectrales de tus potreros cada 5-10 días mediante drones."
+        "description": "Obtenemos imágenes multiespectrales de tus potreros por ciclo de pastoreo mediante drones."
       },
       {
         "number": "02",
@@ -105,7 +105,7 @@
   "technology": {
     "title": "Tecnología de precisión para el campo",
     "items": [
-      { "icon": "🛰️", "title": "Imágenes Multiespectrales", "description": "Capturamos con drones fotográfias de alta resolución cada 5-10 días" },
+      { "icon": "🛰️", "title": "Imágenes Multiespectrales", "description": "Capturamos con drones fotográfias de alta resolución por ciclo de pastoreo" },
       { "icon": "🧠", "title": "Machine Learning", "description": "Modelos entrenados con datos reales de Australia y validados en Bolivia" },
       { "icon": "📊", "title": "Analítica Predictiva", "description": "Proyecciones de crecimiento y recomendaciones basadas en datos" }
     ],
@@ -138,7 +138,7 @@
     "links": {
       "products": "Productos",
       "grassGauge": "Grass Gauge",
-      "cattleVision": "CattleVision",
+      "cattleVision": "Cattle Vision",
       "company": "Empresa",
       "about": "Nosotros",
       "contact": "Contacto",

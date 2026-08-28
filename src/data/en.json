@@ -42,7 +42,7 @@
       "cta": "Discover Grass Gauge →"
     },
     "cattleVision": {
-      "name": "CattleVision",
+      "name": "Cattle Vision",
       "subtitle": "Livestock weighing with drones and AI vision",
       "description": "We estimate your cattle weight with drones and LiDAR, without animal stress or physical handling",
       "features": [
@@ -138,7 +138,7 @@
     "links": {
       "products": "Products",
       "grassGauge": "Grass Gauge",
-      "cattleVision": "CattleVision",
+      "cattleVision": "Cattle Vision",
       "company": "Company",
       "about": "About",
       "contact": "Contact",
