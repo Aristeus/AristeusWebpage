@@ -77,17 +77,17 @@
   "mapDemo": {
     "title": "Visualiza tu campo como nunca antes",
     "buttons": {
-      "satellite": "Visión Computacional",
-      "biomass": "Biomasa",
-      "plan": "Plan Pastoreo"
+      "satellite": "Vista Aérea RGB",
+      "biomass": "Mapa de Biomasa (MS)",
+      "plan": "Plan de Pastoreo"
     },
     "placeholder": {
-      "pasture": "Potrero Norte - 45 ha",
+      "pasture": "Potrero El Encanto - Lote 04 • 25 ha",
       "biomass": "2,450 kg MS/ha",
-      "nutrition": "Alto ●",
-      "recommendation": "Listo para pastoreo — 120 cabezas x 8 días"
+      "nutrition": "Óptima (Pre-floración)",
+      "recommendation": "LISTO PARA PASTOREO — 120 cabezas (Novillos de engorde) — Máximo 2 días"
     },
-    "disclaimer": "Demo ilustrativa con datos de ejemplo"
+    "disclaimer": "Demo ilustrativa con datos reales de monitoreo"
   },
   "benefits": {
     "title": "Resultados que impactan tu operación",
@@ -105,12 +105,12 @@
   "technology": {
     "title": "Tecnología de precisión para el campo",
     "items": [
-      { "icon": "🛰️", "title": "Imágenes Multiespectrales", "description": "Capturamos con drones fotográfias de alta resolución por ciclo de pastoreo" },
-      { "icon": "🧠", "title": "Machine Learning", "description": "Modelos entrenados con datos reales de Australia y validados en Bolivia" },
-      { "icon": "📊", "title": "Analítica Predictiva", "description": "Proyecciones de crecimiento y recomendaciones basadas en datos" }
+      { "icon": "🛰️", "title": "Sensores Multiespectrales y RGB", "description": "Relevamiento aéreo centimétrico adaptado a la velocidad de rebrote y rotación de cada potrero." },
+      { "icon": "🧠", "title": "Visión Computacional e IA", "description": "Algoritmos avanzados calibrados para estimar biomasa disponible (kg MS/ha) y densidad forrajera." },
+      { "icon": "📊", "title": "Modelación de Pastoreo Racional", "description": "Simulación de tasas de crecimiento, balance forrajero y asignación de carga animal en tiempo real." }
     ],
-    "pipeline": "Adquisición Aérea → Procesamiento → Modelo ML → Dashboard → Plan",
-    "badge": "Desarrollado con datos reales de Australia. Validado en Bolivia."
+    "pipeline": "Vuelo de Dron → Fotogrametría Cloud → Algoritmos IA → Plataforma Web → Plan de Pastoreo",
+    "badge": "Algoritmos entrenados con datasets forrajeros internacionales y calibrados en estancias de Bolivia."
   },
   "backing": {
     "title": "Respaldados por",

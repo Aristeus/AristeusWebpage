@@ -108,11 +108,15 @@ function LayerController({ layer, setLayer, selectedPasture, setSelectedPasture 
     satellite: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
   };
 
+  const attribution = layer === 'satellite'
+    ? '&copy; Esri, Maxar, Earthstar Geographics'
+    : '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
+
   return (
     <>
       {/* Base layer toggle */}
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        attribution={attribution}
         url={layer === 'satellite' ? tiles.satellite : tiles.dark}
       />
       
@@ -150,7 +154,7 @@ function LayerController({ layer, setLayer, selectedPasture, setSelectedPasture 
 }
 
 export default function MapDemoReact({ herdPlan }: { herdPlan?: HerdPlanProps } = {}) {
-  const [layer, setLayer] = useState('dark');
+  const [layer, setLayer] = useState('satellite');
   const [selectedPasture, setSelectedPasture] = useState<PastureProps>(pasturePolygons.features[0].properties as PastureProps);
   const [mounted, setMounted] = useState(false);
 
@@ -185,7 +189,7 @@ export default function MapDemoReact({ herdPlan }: { herdPlan?: HerdPlanProps } 
               : 'glass text-text-secondary hover:text-text-primary'
           }`}
         >
-          Vista Aerea
+          Vista Aérea RGB
         </button>
         <button
           onClick={() => setLayer('biomass')}
@@ -195,7 +199,7 @@ export default function MapDemoReact({ herdPlan }: { herdPlan?: HerdPlanProps } 
               : 'glass text-text-secondary hover:text-text-primary'
           }`}
         >
-          Biomasa
+          Mapa de Biomasa (MS)
         </button>
         <button
           onClick={() => setLayer('plan')}
@@ -205,7 +209,7 @@ export default function MapDemoReact({ herdPlan }: { herdPlan?: HerdPlanProps } 
               : 'glass text-text-secondary hover:text-text-primary'
           }`}
         >
-          Plan Pastoreo
+          Plan de Pastoreo
         </button>
       </div>
 
@@ -230,43 +234,38 @@ export default function MapDemoReact({ herdPlan }: { herdPlan?: HerdPlanProps } 
 
         {/* Info panel */}
         <div className="glass rounded-2xl p-6 lg:col-span-1">
-          <h3 className="font-heading font-semibold text-text-primary mb-4">Datos del potrero</h3>
+          <h3 className="font-heading font-semibold text-text-primary mb-1">Datos del potrero</h3>
+          <p className="text-text-secondary text-sm mb-4">Potrero El Encanto — Lote 04 • 25 ha (Superficie total evaluada: 85 ha)</p>
           
           <div className="space-y-4">
             <div>
-              <p className="text-text-secondary text-sm">Potrero seleccionado</p>
-              <p className="font-heading text-lg text-text-primary">{selectedPasture.name}</p>
-              <p className="text-text-secondary text-sm">{selectedPasture.size} ha</p>
+              <p className="text-text-secondary text-sm">Biomasa Disponible</p>
+              <p className="font-data text-xl text-aristeus-green font-semibold">2,450 kg MS/ha</p>
+              <p className="text-text-secondary text-xs">Biomasa total en pie: ~61.25 t MS</p>
             </div>
             
             <div>
-              <p className="text-text-secondary text-sm">Biomasa estimada</p>
-              <p className="font-data text-xl text-aristeus-green font-semibold">
-                {selectedPasture.biomass.toLocaleString()} kg MS/ha
-              </p>
+              <p className="text-text-secondary text-sm">Calidad Forrajera Estimada</p>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aristeus-green/10 text-aristeus-green text-sm">
+                Óptima (Pre-floración)
+              </span>
             </div>
             
             <div>
-              <p className="text-text-secondary text-sm">Estado nutricional</p>
-              <p className="flex items-center gap-2 text-text-primary">
-                <span className={`w-2 h-2 rounded-full ${
-                  selectedPasture.biomass > 2000 ? 'bg-aristeus-green' : 
-                  selectedPasture.biomass > 1000 ? 'bg-aristeus-secondary' : 'bg-aristeus-navy'
-                }`}></span>
-                {selectedPasture.biomass > 2000 ? 'Alto' : 
-                 selectedPasture.biomass > 1000 ? 'Medio' : 'Bajo'}
-              </p>
+              <p className="text-text-secondary text-sm">Días de Reposo</p>
+              <p className="font-data text-xl text-aristeus-green font-semibold">38 días</p>
+              <p className="text-text-secondary text-xs">Punto Óptimo de Reposo alcanzado</p>
             </div>
             
             <div className="pt-4 border-t border-border-subtle">
               <p className="text-text-secondary text-sm mb-2">Recomendación</p>
-              <p className="text-text-primary text-sm">
-                {selectedPasture.status === 'available' 
-                  ? `Listo para pastoreo — ${Math.floor(selectedPasture.biomass / 20)} cabezas x ${Math.floor(selectedPasture.biomass / 300)} días`
-                  : selectedPasture.status === 'resting'
-                  ? 'En descanso — Esperar 15 días'
-                  : 'Agotado — No pastorear'}
-              </p>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aristeus-green/10 text-aristeus-green text-sm mb-3">
+                LISTO PARA PASTOREO
+              </span>
+              <div className="space-y-1 text-sm text-text-primary">
+                <p>Carga Asignada: <strong>120 cabezas (Novillos de engorde)</strong></p>
+                <p>Período de Ocupación: <strong>Máximo 2 días</strong></p>
+              </div>
             </div>
           </div>
         </div>

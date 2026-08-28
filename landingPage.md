@@ -292,16 +292,15 @@ SECCIÓN 7: TECNOLOGÍA (sin saturar)
 - Fondo: #0D1117
 - SectionTitle: "Tecnología de precisión para el campo"
 - Layout: 3 columnas minimalistas
-  - Columna 1: ícono satélite + "Imágenes Multiespectrales"
-    + texto breve
-  - Columna 2: ícono red neuronal + "Machine Learning"
-    + texto breve
-  - Columna 3: ícono gráfica + "Analítica Predictiva"
-    + texto breve
+  - Columna 1: ícono dron + "Sensores Multiespectrales y RGB"
+    + "Relevamiento aéreo centimétrico adaptado a la velocidad de rebrote y rotación de cada potrero."
+  - Columna 2: ícono cerebro + "Visión Computacional e IA"
+    + "Algoritmos avanzados calibrados para estimar biomasa disponible (kg MS/ha) y densidad forrajera."
+  - Columna 3: ícono gráfica + "Modelación de Pastoreo Racional"
+    + "Simulación de tasas de crecimiento, balance forrajero y asignación de carga animal en tiempo real."
 - Abajo: línea visual tipo pipeline simplificado:
-  Satélite → Procesamiento → Modelo ML → Dashboard → Plan
-- Badge: "Desarrollado con datos reales de Australia.
-  Validado en Bolivia."
+  Vuelo de Dron → Fotogrametría Cloud → Algoritmos IA → Plataforma Web → Plan de Pastoreo
+- Badge: "Algoritmos entrenados con datasets forrajeros internacionales y calibrados en estancias de Bolivia."
 
 SECCIÓN 8: RESPALDO
 ─────────────────────
